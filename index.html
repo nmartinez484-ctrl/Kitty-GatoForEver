@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Karina &amp; Nelson - ¡Se Acerca el Gran Día! 💍</title>
+  <meta name="description" content="Invitación de boda de Karina y Nelson — Confirmá tu asistencia y revisá los detalles del gran día.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Karina & Nelson — ¡Se Acerca el Gran Día!" />
+  <meta property="og:description" content="Invitación de boda: fecha, lugar y toda la información para nuestros invitados." />
+  <meta property="og:type" content="website" />
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos CSS (ajustados) */
+    :root{
+      --bg: #f8f8f8;
+      --card-bg: rgba(255,255,255,0.98);
+      --primary: #5d4037;
+      --muted: #795548;
+      --accent: #a1887f;
+      --note-bg: #fff3e0;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      padding:24px;
+      font-family: 'Georgia', serif;
+      background:var(--bg);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:760px;
+      background:var(--card-bg);
+      border-radius:12px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.08);
+      padding:36px;
+      text-align:center;
+    }
+    h1{
+      margin:0;
+      font-family:'Playfair Display', serif;
+      font-size:3rem;
+      color:var(--primary);
+    }
+    h2{
+      margin:6px 0 18px;
+      font-family:'Playfair Display',serif;
+      font-size:1.5rem;
+      color:var(--accent);
+    }
+    .tagline{display:block;color:var(--muted);font-style:italic;margin-bottom:18px}
+    #countdown{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin:20px auto;
+      padding:18px;
+      background:#efebe9;
+      border-radius:8px;
+      max-width:520px;
+      align-items:stretch;
+    }
+    .time-box{
+      background:#fff;
+      color:var(--primary);
+      padding:10px 12px;
+      border-radius:6px;
+      min-width:64px;
+      box-shadow:inset 0 0 6px rgba(0,0,0,0.03);
+    }
+    .time-box span{display:block;font-size:1.6rem;font-weight:700}
+    .time-box small{display:block;font-size:0.7rem;text-transform:uppercase;color:var(--accent);letter-spacing:1px}
+    .details{margin-top:20px;text-align:left;font-size:1.05rem;line-height:1.7;padding:0 10px}
+    .details strong{color:var(--primary)}
+    .note{background:var(--note-bg);border-left:5px solid #ff9800;padding:10px 14px;margin:14px 0;font-style:italic}
+    .address{font-size:1.1rem;font-weight:700;color:var(--muted);margin:18px 0;text-align:center}
+    .sign{margin-top:26px;text-align:center}
+    /* Audio control (mejorado) */
+    #audio-control{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:0;
+      background:var(--muted);
+      color:white;
+      font-size:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 8px 16px rgba(0,0,0,0.2);
+      z-index:120;
+    }
+    #audio-control[aria-pressed="true"]{background:var(--primary)}
+    /* Visually hidden (para lectores de pantalla) */
+    .visually-hidden{
+      position:absolute!important;
+      height:1px;width:1px;
+      overflow:hidden;clip:rect(1px,1px,1px,1px);
+      white-space:nowrap;border:0;padding:0;margin:-1px;
+    }
+    @media (max-width:600px){
+      .container{padding:20px}
+      h1{font-size:2rem}
+      #countdown{gap:8px;padding:12px}
+      .time-box span{font-size:1.2rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Karina &amp; Nelson 💍</h1>
+    <h2>¡Se acerca el gran día!</h2>
+    <span class="tagline">¡Hola a todos nuestros #InvitadosEstrella!</span>
+
+    <!-- Contador con role y aria-live -->
+    <div id="countdown" role="timer" aria-live="polite" aria-atomic="true" aria-label="Cuenta regresiva hasta la boda">
+      <div class="time-box" aria-hidden="false"><span id="days">00</span><small>Días</small></div>
+      <div class="time-box" aria-hidden="false"><span id="hours">00</span><small>Horas</small></div>
+      <div class="time-box" aria-hidden="false"><span id="minutes">00</span><small>Minutos</small></div>
+      <div class="time-box" aria-hidden="false"><span id="seconds">00</span><small>Segundos</small></div>
+    </div>
+
+    <section class="details">
+      <p>¡Parece que fue ayer cuando dijimos que nos casábamos, y ahora falta muy poco! Preparen sus looks más épicos, porque la fiesta del año se acerca.</p>
+
+      <div class="note">
+        <p><strong>Misión "Puntualidad Extrema":</strong> La ceremonia empieza a las <strong>18:00 hrs en punto</strong>. Lleguen 15 minutos antes para no perderse la entrada triunfal.</p>
+      </div>
+
+      <p><strong>Operación "Estacionamiento Imposible":</strong> La iglesia no tiene estacionamiento, así que les recomendamos llegar con tiempo o usar taxi/app.</p>
+
+      <div class="note">
+        <p><strong>Consejo "Abrígate y Triunfarás":</strong> Por la noche, Talagante puede ser frío 🥶 ¡Trae algo abrigador!</p>
+      </div>
+
+      <p><strong>Requisito "Modo Fiesta ON":</strong> El dress code: ¡LAS MEJORES GANAS DE PASARLO BIEN!</p>
+
+      <p class="address">📍 Av. Bernardo O'Higgins 1295, Talagante, RM</p>
+
+      <div class="sign">
+        <p>Con cariño y mucha emoción,</p>
+        <p style="font-weight:700;font-size:1.2rem">Karina &amp; Nelson</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Audio: enlace directo de Google Drive (ya convertido a formato de descarga directa) -->
+  <audio id="background-music" loop preload="metadata">
+    <source src="https://drive.google.com/uc?export=download&id=1TU7GUwhNNbHt-OjbjZCfiopXfmMzm4A2" type="audio/mpeg">
+    Tu navegador no soporta el elemento audio.
+  </audio>
+
+  <!-- Botón de audio con texto accesible -->
+  <button id="audio-control" aria-pressed="false" aria-label="Reproducir música de fondo">
+    <span aria-hidden="true">▶️</span>
+    <span class="visually-hidden" id="audio-control-label">Reproducir música</span>
+  </button>
+
+  <script>
+    /* ---------- CONFIGURACIÓN (cambia aquí) ----------
+       Fecha ajustada a: 20 de diciembre de 2025 a las 18:00 (hora de Chile, UTC-03:00)
+       Si prefieres otro huso, actualiza el sufijo del ISO (ej. -03:00).
+    */
+    const weddingDateIso = '2025-12-20T18:00:00-03:00'; // <-- FECHA MODIFICADA
+    const weddingDate = new Date(weddingDateIso).getTime();
+
+    // Elementos del DOM
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const countdownContainer = document.getElementById('countdown');
+
+    // Función para actualizar el contador
+    function updateCountdown() {
+      const now = Date.now();
+      let distance = weddingDate - now;
+
+      if (isNaN(weddingDate)) {
+        // Fecha inválida: mostrar aviso
+        countdownContainer.innerHTML = '<div style="padding:12px">Fecha de boda inválida. Edita weddingDateIso en el script.</div>';
+        clearInterval(intervalId);
+        return;
+      }
+
+      if (distance <= 0) {
+        // La fecha ya pasó: mostrar mensaje celebratorio (mantener estilo)
+        countdownContainer.innerHTML = '<div style="padding:18px;font-weight:700;color:#2e7d32">¡LA FIESTA ESTÁ ON! 🎉</div>';
+        clearInterval(intervalId);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2,'0');
+      hoursEl.textContent = String(hours).padStart(2,'0');
+      minutesEl.textContent = String(minutes).padStart(2,'0');
+      secondsEl.textContent = String(seconds).padStart(2,'0');
+    }
+
+    // Primera actualización y intervalo
+    updateCountdown();
+    const intervalId = setInterval(updateCountdown, 1000);
+
+    /* ---------- CONTROL DE MÚSICA (más predecible y accesible) ----------
+       - Se evita el autoplay global.
+       - El usuario debe activar la música con el botón.
+       - El botón actualiza aria-pressed y texto para lectores de pantalla.
+    */
+    const music = document.getElementById('background-music');
+    const control = document.getElementById('audio-control');
+    const controlLabel = document.getElementById('audio-control-label');
+    let isPlaying = false;
+
+    // Helper para actualizar el estado del botón (ícono y aria)
+    function setPlayingState(playing) {
+      isPlaying = playing;
+      control.setAttribute('aria-pressed', String(playing));
+      if (playing) {
+        control.querySelector('span[aria-hidden="true"]').textContent = '⏸️';
+        controlLabel.textContent = 'Pausar música';
+        control.setAttribute('aria-label', 'Pausar música de fondo');
+      } else {
+        control.querySelector('span[aria-hidden="true"]').textContent = '▶️';
+        controlLabel.textContent = 'Reproducir música';
+        control.setAttribute('aria-label', 'Reproducir música de fondo');
+      }
+    }
+
+    // Click en el botón: reproducir/pausar
+    control.addEventListener('click', function () {
+      if (isPlaying) {
+        music.pause();
+        setPlayingState(false);
+      } else {
+        // play() requiere gesto del usuario; manejamos promesas por seguridad
+        music.play().then(() => {
+          setPlayingState(true);
+        }).catch(err => {
+          // Si no pudo reproducir (bloqueo del navegador), informamos en consola y mantenemos estado
+          console.warn('No se pudo reproducir el audio automáticamente:', err);
+        });
+      }
+    });
+
+    // Si el audio termina (no debería, está en loop), actualizar estado
+    music.addEventListener('ended', () => setPlayingState(false));
+    music.addEventListener('pause', () => {
+      if (!music.loop) setPlayingState(false);
+    });
+
+    // Estado inicial
+    setPlayingState(false);
+  </script>
+</body>
+</html>
